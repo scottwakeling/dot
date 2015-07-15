@@ -125,6 +125,16 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 
-"------------------------------------------------------------
 
-colorscheme industry
+"------------------------------------------------------------
+"colorscheme evening
+"set ft=pic
+set nu
+
+"------------------------------------------------------------
+"ctags"
+"sudo apt-get install exuberant-ctags"
+"<F2> to rebuild tags"
+"Ctrl-] to find the tag under cursor"
+"Ctrl-t to go back"
+map <F2> :!ctags -o .tags --recurse --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q<CR>:!mv .tags tags<CR>
