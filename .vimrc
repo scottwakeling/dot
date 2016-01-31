@@ -1,8 +1,20 @@
+
+"------------------------------------------------------------
+
+" pathogen, autoloads any plug-ins under ~/.vim/bundle
+" mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+"
+" ..then see: https://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
+execute pathogen#infect()
+
 "------------------------------------------------------------
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
+
+filetype off
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -11,7 +23,6 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
-
 
 "------------------------------------------------------------
 
@@ -108,9 +119,9 @@ set pastetoggle=<F11>
 " Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
 " 'expandtab'.  This way you will always insert spaces.  The
 " formatting will never be messed up when 'tabstop' is changed.
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 "------------------------------------------------------------
@@ -125,16 +136,23 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 
-
 "------------------------------------------------------------
-"colorscheme evening
-"set ft=pic
+
+colorscheme industry
+
+" ignore case when searching
+set ic
+
+" highlight search results
+set hls
+
 set nu
 
 "------------------------------------------------------------
-"ctags"
+""ctags"
 "sudo apt-get install exuberant-ctags"
-"<F2> to rebuild tags"
+""<F2> to rebuild tags"
 "Ctrl-] to find the tag under cursor"
-"Ctrl-t to go back"
+""Ctrl-t to go back"
 map <F2> :!ctags -o .tags --recurse --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q<CR>:!mv .tags tags<CR>
+
