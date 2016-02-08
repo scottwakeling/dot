@@ -1,5 +1,5 @@
 
-" Iinstall and compile YouCompleteMe
+" Install and compile YouCompleteMe
 " git clone ...
 " cd ~/.vim/bundle/YouCompleteMe
 " git submodule update --init --recursive
@@ -21,8 +21,6 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
-filetype off
-
 "------------------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
@@ -32,6 +30,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-fugitive'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -146,6 +145,11 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Source project-specific .vimrc
+set exrc
+" No shell or write, display map commands
+set secure
+
 "------------------------------------------------------------
 " Mappings
 "
@@ -159,6 +163,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 
 "------------------------------------------------------------
+" gf
+"
+" let &path.="$ANDROID_ROOT/art/compiler/optimizing,$ANDROID_ROOT/art/" etc.
+
+"------------------------------------------------------------
 
 colorscheme industry
 
@@ -169,6 +178,9 @@ set ic
 set hls
 
 set nu
+
+set colorcolumn=100
+highlight ColorColumn ctermbg=darkgray
 
 "------------------------------------------------------------
 ""ctags"
