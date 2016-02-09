@@ -140,9 +140,9 @@ set pastetoggle=<F11>
 " Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
 " 'expandtab'.  This way you will always insert spaces.  The
 " formatting will never be messed up when 'tabstop' is changed.
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Source project-specific .vimrc
@@ -169,8 +169,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
-colorscheme industry
-
 " ignore case when searching
 set ic
 
@@ -179,7 +177,7 @@ set hls
 
 set nu
 
-set colorcolumn=100
+set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 
 "------------------------------------------------------------
@@ -189,4 +187,5 @@ highlight ColorColumn ctermbg=darkgray
 "Ctrl-] to find the tag under cursor"
 ""Ctrl-t to go back"
 map <F2> :!ctags -o .tags --recurse --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q<CR>:!mv .tags tags<CR>
+
 
